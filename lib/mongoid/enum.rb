@@ -32,7 +32,7 @@ module Mongoid
 
       def set_values_constant(name, values)
         const_name = name.to_s.upcase
-        const_set const_name, values
+        const_set const_name, values unless const_defined?(const_name)
       end
 
       def create_field(field_name, options)
